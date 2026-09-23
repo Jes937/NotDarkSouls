@@ -1,0 +1,14 @@
+C:\Users\jes-t\RiderProjects\NotDarkSouls\NotDarkSouls\bin\Debug\net10.0\NotDarkSouls.exe
+C:\Users\jes-t\RiderProjects\NotDarkSouls\NotDarkSouls\bin\Debug\net10.0\NotDarkSouls.deps.json
+C:\Users\jes-t\RiderProjects\NotDarkSouls\NotDarkSouls\bin\Debug\net10.0\NotDarkSouls.runtimeconfig.json
+C:\Users\jes-t\RiderProjects\NotDarkSouls\NotDarkSouls\bin\Debug\net10.0\NotDarkSouls.dll
+C:\Users\jes-t\RiderProjects\NotDarkSouls\NotDarkSouls\bin\Debug\net10.0\NotDarkSouls.pdb
+C:\Users\jes-t\RiderProjects\NotDarkSouls\NotDarkSouls\obj\Debug\net10.0\NotDarkSouls.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jes-t\RiderProjects\NotDarkSouls\NotDarkSouls\obj\Debug\net10.0\NotDarkSouls.AssemblyInfoInputs.cache
+C:\Users\jes-t\RiderProjects\NotDarkSouls\NotDarkSouls\obj\Debug\net10.0\NotDarkSouls.AssemblyInfo.cs
+C:\Users\jes-t\RiderProjects\NotDarkSouls\NotDarkSouls\obj\Debug\net10.0\NotDarkSouls.csproj.CoreCompileInputs.cache
+C:\Users\jes-t\RiderProjects\NotDarkSouls\NotDarkSouls\obj\Debug\net10.0\NotDarkSouls.dll
+C:\Users\jes-t\RiderProjects\NotDarkSouls\NotDarkSouls\obj\Debug\net10.0\refint\NotDarkSouls.dll
+C:\Users\jes-t\RiderProjects\NotDarkSouls\NotDarkSouls\obj\Debug\net10.0\NotDarkSouls.pdb
+C:\Users\jes-t\RiderProjects\NotDarkSouls\NotDarkSouls\obj\Debug\net10.0\NotDarkSouls.genruntimeconfig.cache
+C:\Users\jes-t\RiderProjects\NotDarkSouls\NotDarkSouls\obj\Debug\net10.0\ref\NotDarkSouls.dll

@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "NotDarkSouls/1.0.0": {
+        "runtime": {
+          "NotDarkSouls.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "NotDarkSouls/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
