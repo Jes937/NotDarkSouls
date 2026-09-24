@@ -15,6 +15,8 @@ public class Warrior : BaseClass
         Dexterity = 1;
 
         Inventory.AddItem(new WarriorStartingSword());
+        Inventory.AddItem(new ElfDagger());
+        Inventory.AddItem(new StandardGloves());
     }
 
     public override void ShowStats()

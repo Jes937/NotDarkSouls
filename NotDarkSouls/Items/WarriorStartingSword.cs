@@ -6,6 +6,7 @@ public class WarriorStartingSword : BaseItem
 public WarriorStartingSword()
 
 {
+    ItemType = "OneHandedWeapon";
     
     Name = "Iron Sword";
     

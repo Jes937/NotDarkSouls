@@ -12,3 +12,4 @@ C:\Users\jes-t\RiderProjects\NotDarkSouls\NotDarkSouls\obj\Debug\net10.0\refint\
 C:\Users\jes-t\RiderProjects\NotDarkSouls\NotDarkSouls\obj\Debug\net10.0\NotDarkSouls.pdb
 C:\Users\jes-t\RiderProjects\NotDarkSouls\NotDarkSouls\obj\Debug\net10.0\NotDarkSouls.genruntimeconfig.cache
 C:\Users\jes-t\RiderProjects\NotDarkSouls\NotDarkSouls\obj\Debug\net10.0\ref\NotDarkSouls.dll
+C:\Users\jes-t\RiderProjects\NotDarkSouls\NotDarkSouls\obj\Debug\net10.0\NotDarkSouls.sourcelink.json

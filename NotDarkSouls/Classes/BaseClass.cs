@@ -31,7 +31,6 @@ public abstract class BaseClass
         Console.WriteLine($"Mana: {Mana}");
         Console.WriteLine($"Dexterity: {Dexterity}");
         Console.WriteLine($"Experience: {Experience}/{ExperienceToNextLevel()}");
-        Console.WriteLine($"Currency: {Currency}");
     }
 
     protected virtual int ExperienceToNextLevel()
