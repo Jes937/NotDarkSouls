@@ -39,12 +39,7 @@ public class Inventory
     //Checks whether this exact item is the one currently equipped in its type's slot
     public bool IsEquipped(BaseItem item) =>
         equippedItems.TryGetValue(item.ItemType, out var equipped) && equipped == item;
-    //Here it checks if you are high enough lvl to for that item
-
-    public bool MeetsLvlRequirement(BaseItem item, int PlayerLvl)
-    {
-        return PlayerLvl >= item.LvlReq;
-    }
+    
     //Does so the player can equip an item - only checks against other items of the same type
     public bool EquipItem(string itemName, int playerLvl)
     {
