@@ -4,7 +4,7 @@ namespace NotDarkSouls.Classes.Map;
 
 public static class StartingCity
 {
-    public static void SmallTown(BaseClass player)
+    public static string Visit(BaseClass player)
     {
         Console.WriteLine("Welcome stranger");
         while (true)
@@ -14,7 +14,8 @@ public static class StartingCity
 
             if (choice == "8")
             {
-                return;
+                Console.WriteLine("Returning to menu");
+                return "Menu";
             }
             else if (choice == "9")
             {

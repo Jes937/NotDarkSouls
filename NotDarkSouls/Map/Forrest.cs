@@ -4,7 +4,7 @@ namespace NotDarkSouls.Classes.Map;
 
 public class Forrest
 {
-    public void startForrest(BaseClass player)
+    public static string Visit(BaseClass player)
     {
         Console.WriteLine("Welcome you are now standing in the forrest of the forbiden");
 
@@ -19,7 +19,8 @@ public class Forrest
             }
             else if (choice == "2")
             {
-                StartingCity.SmallTown(player);
+                //skal lige rette det her så den ikke stacer loops 
+                StartingCity.Visit(player);
 
             }
             else if (choice == "3")
@@ -37,7 +38,7 @@ public class Forrest
             else if (choice == "0")
             {
                 Console.WriteLine("Returning to menu...");
-                break;
+                return "Menu";
             }
             else
             {

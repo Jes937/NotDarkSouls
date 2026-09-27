@@ -88,5 +88,4 @@ public abstract class BaseClass
             }
         }
     }
-    public CurrentLocation CurrentLocation { get; set; }
 }

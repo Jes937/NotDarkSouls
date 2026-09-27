@@ -29,7 +29,7 @@ while (true)
         
         if (answer == "y")
         {
-            forrest.startForrest(player);
+            Forrest.Visit(player);
         }
         
         if (answer == "n")
