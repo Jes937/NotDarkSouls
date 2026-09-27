@@ -2,7 +2,7 @@
 
 namespace NotDarkSouls.Classes;
 
-public class Inventory
+public class InventoryLogic
 {
     public int currentCurrency = 25;
 
@@ -12,7 +12,7 @@ public class Inventory
         return currentCurrency;
     }
 
-    public int AddXurrency(int amount)
+    public int Addcurrency(int amount)
     {
         currentCurrency += amount;
         return currentCurrency;
@@ -108,5 +108,4 @@ public class Inventory
         return totalDamage;
     }
     
-
 }

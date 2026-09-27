@@ -14,11 +14,11 @@ public class Warrior : BaseClass
         Mana = 1;
         Dexterity = 1;
 
-        Inventory.AddItem(new WarriorStartingSword());
-        Inventory.AddItem(new ElfDagger());
-        Inventory.AddItem(new StandardGloves());
-        Inventory.AddItem(new ElfGloves());
-        Inventory.AddItem(new StandardChestplate());
+        InventoryLogic.AddItem(new WarriorStartingSword());
+        InventoryLogic.AddItem(new ElfDagger());
+        InventoryLogic.AddItem(new StandardGloves());
+        InventoryLogic.AddItem(new ElfGloves());
+        InventoryLogic.AddItem(new StandardChestplate());
     }
 
     public override void ShowStats()
@@ -26,7 +26,7 @@ public class Warrior : BaseClass
         Console.WriteLine("\n=== Warrior ===");
         base.ShowStats();
         
-        Console.WriteLine($"Armor: {Inventory.GetTotalArmor()}");
-        Console.WriteLine($"Damage: {Inventory.GetTotalDamage()}");
+        Console.WriteLine($"Armor: {InventoryLogic.GetTotalArmor()}");
+        Console.WriteLine($"Damage: {InventoryLogic.GetTotalDamage()}");
     }
 }

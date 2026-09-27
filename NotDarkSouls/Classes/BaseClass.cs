@@ -1,4 +1,6 @@
-﻿namespace NotDarkSouls.Classes;
+﻿using NotDarkSouls.Classes.Map;
+
+namespace NotDarkSouls.Classes;
 
 public abstract class BaseClass
 {
@@ -9,7 +11,7 @@ public abstract class BaseClass
     public int Dexterity { get; set; }
     public int Experience { get; set; }
     public int Currency { get; set; }
-    public Inventory Inventory { get; } = new();
+    public InventoryLogic InventoryLogic { get; } = new();
 
     public void AddExperience(int amount)
     {
@@ -86,4 +88,5 @@ public abstract class BaseClass
             }
         }
     }
+    public CurrentLocation CurrentLocation { get; set; }
 }
