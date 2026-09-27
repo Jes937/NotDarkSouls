@@ -25,6 +25,8 @@ public class Warrior : BaseClass
     {
         Console.WriteLine("\n=== Warrior ===");
         base.ShowStats();
+        
         Console.WriteLine($"Armor: {Inventory.GetTotalArmor()}");
+        Console.WriteLine($"Damage: {Inventory.GetTotalDamage()}");
     }
 }

@@ -39,14 +39,25 @@ public class Inventory
     //Checks whether this exact item is the one currently equipped in its type's slot
     public bool IsEquipped(BaseItem item) =>
         equippedItems.TryGetValue(item.ItemType, out var equipped) && equipped == item;
+    //Here it checks if you are high enough lvl to for that item
 
+    public bool MeetsLvlRequirement(BaseItem item, int PlayerLvl)
+    {
+        return PlayerLvl >= item.LvlReq;
+    }
     //Does so the player can equip an item - only checks against other items of the same type
-    public bool EquipItem(string itemName)
+    public bool EquipItem(string itemName, int playerLvl)
     {
         var item = items.FirstOrDefault(i => i.Name == itemName);
         if (item == null)
         {
             Console.WriteLine("Item not found in inventory.");
+            return false;
+        }
+
+        if (playerLvl < item.LvlReq)
+        {
+            Console.WriteLine($"You need to be level {item.LvlReq} to equip {item.Name}.");
             return false;
         }
 
@@ -80,6 +91,7 @@ public class Inventory
         }
     }
     
+    //calculates the amount of armor you have on with all the equipped gear
     public int GetTotalArmor()
     {
         int totalArmor = 0;
@@ -89,4 +101,17 @@ public class Inventory
         }
         return totalArmor;
     }
+    
+    //Calculates the amount of damage you do with the equipped weapons
+    public int GetTotalDamage()
+    {
+        int totalDamage = 0;
+        foreach (var item in EquippedItems.Values)
+        {
+            totalDamage += item.Damage;
+        }
+        return totalDamage;
+    }
+    
+
 }

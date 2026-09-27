@@ -50,7 +50,7 @@ public class Forrest
                         string? itemName = Console.ReadLine()?.Trim();
                         if (!string.IsNullOrEmpty(itemName))
                         {
-                            player.Inventory.EquipItem(itemName);
+                            player.Inventory.EquipItem(itemName, player.Lvl);
                         }
                     }
                     else if (invChoice == "3")

@@ -8,7 +8,7 @@ public class ElfDagger : BaseItem
     
         Name = "Elf Dagger";
     
-        LvlReq = 1;
+        LvlReq = 3;
     
         DamageType = "Slash";
     

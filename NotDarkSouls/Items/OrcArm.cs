@@ -10,7 +10,7 @@ public class OrcArm : BaseItem
     
         Name = "Orc Arm ";
     
-        LvlReq = 1;
+        LvlReq = 3;
     
         DamageType = "Blunt";
     
