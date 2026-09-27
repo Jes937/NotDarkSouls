@@ -79,4 +79,14 @@ public class Inventory
             Console.WriteLine($"{item.Name} | Damage: {item.Damage} | Type: {item.DamageType} | Weight: {item.Weight}{equippedTag}");
         }
     }
+    
+    public int GetTotalArmor()
+    {
+        int totalArmor = 0;
+        foreach (var item in EquippedItems.Values)
+        {
+            totalArmor += item.Armor;
+        }
+        return totalArmor;
+    }
 }

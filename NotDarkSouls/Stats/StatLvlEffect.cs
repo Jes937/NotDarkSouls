@@ -17,4 +17,8 @@ public class StatLevelEffect
         character.Dexterity += DexterityBonus;
         character.Currency += CurrencyBonus;
     }
+
+
+    
+    
 }

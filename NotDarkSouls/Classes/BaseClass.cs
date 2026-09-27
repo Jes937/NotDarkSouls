@@ -33,6 +33,11 @@ public abstract class BaseClass
         Console.WriteLine($"Experience: {Experience}/{ExperienceToNextLevel()}");
     }
 
+  /*  public int AmountArmor(int amount)
+    {
+        
+    }
+*/
     protected virtual int ExperienceToNextLevel()
     {
         return Lvl * 100;

@@ -17,12 +17,14 @@ public class Warrior : BaseClass
         Inventory.AddItem(new WarriorStartingSword());
         Inventory.AddItem(new ElfDagger());
         Inventory.AddItem(new StandardGloves());
+        Inventory.AddItem(new ElfGloves());
+        Inventory.AddItem(new StandardChestplate());
     }
 
     public override void ShowStats()
     {
         Console.WriteLine("\n=== Warrior ===");
         base.ShowStats();
-        Console.WriteLine($"Armor: {Armor}");
+        Console.WriteLine($"Armor: {Inventory.GetTotalArmor()}");
     }
 }
