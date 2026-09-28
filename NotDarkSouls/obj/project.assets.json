@@ -1,11 +1,77 @@
 {
   "version": 4,
   "targets": {
-    "net10.0": {}
+    "net10.0": {
+      "linq2db/6.5.0": {
+        "type": "package",
+        "dependencies": {
+          "linq2db.Analyzers": "6.5.0"
+        },
+        "compile": {
+          "lib/net10.0/linq2db.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/linq2db.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "linq2db.Analyzers/6.5.0": {
+        "type": "package",
+        "build": {
+          "buildTransitive/linq2db.Analyzers.targets": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "linq2db/6.5.0": {
+      "sha512": "vNcQsEXqPIW71xghPZWJRpkY6gYnoM61ZiU13jrn1ImakKv9217gP7rSaF57WzcW3JwT4D4PzBGS+rJXxXy/FA==",
+      "type": "package",
+      "path": "linq2db/6.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "images/icon.png",
+        "lib/net10.0/linq2db.dll",
+        "lib/net10.0/linq2db.xml",
+        "lib/net462/linq2db.dll",
+        "lib/net462/linq2db.xml",
+        "lib/net8.0/linq2db.dll",
+        "lib/net8.0/linq2db.xml",
+        "lib/net9.0/linq2db.dll",
+        "lib/net9.0/linq2db.xml",
+        "lib/netstandard2.0/linq2db.dll",
+        "lib/netstandard2.0/linq2db.xml",
+        "linq2db.6.5.0.nupkg.sha512",
+        "linq2db.nuspec",
+        "readme.md"
+      ]
+    },
+    "linq2db.Analyzers/6.5.0": {
+      "sha512": "H8QO/xN1TOXTSEFM0kVV5w+wwNEsxwI6NBurj8j4iUP+uJGURkhPAGQpVlVlGFcJLxchdXeb2H9nfR1g/bsvfA==",
+      "type": "package",
+      "path": "linq2db.analyzers/6.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "analyzers/dotnet/roslyn4.8/cs/LinqToDB.Analyzers.CodeFixes.dll",
+        "analyzers/dotnet/roslyn4.8/cs/LinqToDB.Analyzers.dll",
+        "build/linq2db.Analyzers.targets",
+        "buildTransitive/linq2db.Analyzers.targets",
+        "images/icon.png",
+        "linq2db.analyzers.6.5.0.nupkg.sha512",
+        "linq2db.analyzers.nuspec",
+        "readme.md"
+      ]
+    }
+  },
   "projectFileDependencyGroups": {
-    "net10.0": []
+    "net10.0": [
+      "linq2db >= 6.5.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\jes-t\\.nuget\\packages\\": {}
@@ -51,6 +117,12 @@
       "net10.0": {
         "framework": "net10.0",
         "targetAlias": "net10.0",
+        "dependencies": {
+          "linq2db": {
+            "target": "Package",
+            "version": "[6.5.0, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",

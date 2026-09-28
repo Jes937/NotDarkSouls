@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "6GanxL9hzuc=",
+  "dgSpecHash": "wzs1LZdBO5o=",
   "success": true,
   "projectFilePath": "C:\\Users\\jes-t\\RiderProjects\\NotDarkSouls\\NotDarkSouls\\NotDarkSouls.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\jes-t\\.nuget\\packages\\linq2db\\6.5.0\\linq2db.6.5.0.nupkg.sha512",
+    "C:\\Users\\jes-t\\.nuget\\packages\\linq2db.analyzers\\6.5.0\\linq2db.analyzers.6.5.0.nupkg.sha512"
+  ],
   "logs": []
 }
