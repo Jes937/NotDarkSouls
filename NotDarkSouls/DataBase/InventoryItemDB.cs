@@ -8,7 +8,7 @@ public class InventoryItemDB
     [PrimaryKey, Identity]
     public int InventoryItemId { get; set; }
 
-    [Column("InventoryId"), NotNull]   // foreign key back to InventoryDB
+    [Column("InventoryId"), NotNull]
     public int InventoryId { get; set; }
 
     [Column("ItemName"), NotNull]

@@ -49,7 +49,7 @@ public class InventoryItemService : IInventoryItem
         item.InventoryId = inventoryId;
 
         item.InventoryItemId =
-            await _db.InsertWithInt32IdentityAsync(item);
+            await _db.InsertWithInt32IdentityAsync(item, token: ct);
 
         return item;
     }
@@ -65,7 +65,7 @@ public class InventoryItemService : IInventoryItem
             .Where(x =>
                 x.InventoryId == inventoryId &&
                 x.InventoryItemId == itemId)
-            .DeleteAsync();
+            .DeleteAsync(ct);
 
         return deleted > 0;
     }
@@ -90,13 +90,12 @@ public class InventoryItemService : IInventoryItem
                 x.ItemType == item.ItemType &&
                 x.InventoryItemId != itemId)
             .Set(x => x.IsEquipped, false)
-            .UpdateAsync();
+            .UpdateAsync(ct);
 
         // Equip the selected item
         item.IsEquipped = true;
 
-        return await _db
-                   .UpdateAsync(item) > 0;
+        return await _db.UpdateAsync(item, token: ct) > 0;
     }
 
     // Unequips an item
@@ -112,7 +111,6 @@ public class InventoryItemService : IInventoryItem
 
         item.IsEquipped = false;
 
-        return await _db
-                   .UpdateAsync(item) > 0;
+        return await _db.UpdateAsync(item, token: ct) > 0;
     }
 }
