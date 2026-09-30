@@ -20,7 +20,6 @@ db.CreateTable<InventoryItemDB>(tableOptions: TableOptions.CheckExistence);
 
 
 // SERVICES
-
 var playerService = new PlayerService(
     db,
     new StatsService(db),
@@ -29,7 +28,6 @@ var playerService = new PlayerService(
 
 
 // PLAYER NAME
-
 
 Console.WriteLine("What is your name?");
 
@@ -41,7 +39,6 @@ Console.WriteLine($"Welcome {playerName}");
 
 
 // MAIN MENU
-
 while (true)
 {
     Console.WriteLine();
@@ -55,7 +52,6 @@ while (true)
 
 
     // WARRIOR
-
     if (choice == "1")
     {
         // Create the game character
@@ -79,28 +75,19 @@ while (true)
 
         // Starting items are added once, when the character is created
         await player.AddStartingItemsAsync();
-
-
-
+        
         // SHOW STATS
-
         player.ShowStats();
-
-
-
+        
         // CONTINUE?
-
         Console.WriteLine();
 
         Console.WriteLine("Do you want to continue? y/n");
 
         string? answer =
             Console.ReadLine()?.Trim().ToLower();
-
-
-
+        
         // START GAME
-
         if (answer == "y")
         {
             await LogicForVisit.Run(player);
@@ -109,33 +96,25 @@ while (true)
 
             Console.WriteLine("Returning to class selection...");
         }
-
-
         // DON'T START GAME
-
         else if (answer == "n")
         {
             continue;
         }
-
-
-
+        
         // INVALID ANSWER
         else
         {
             Console.WriteLine("Please enter y or n.");
         }
     }
-  
     // EXIT GAME
-    
     else if (choice == "0")
     {
         Console.WriteLine("Goodbye!");
 
         break;
     }
-    
     // INVALID MENU CHOICE
     else
     {

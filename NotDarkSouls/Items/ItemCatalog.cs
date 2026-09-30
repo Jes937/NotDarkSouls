@@ -7,10 +7,29 @@ public static class ItemCatalog
     private static readonly Func<BaseItem>[] Factories =
     {
         () => new WarriorStartingSword(),
+        
+        //OneHandedSwords
         () => new ElfDagger(),
-        () => new StandardGloves(),
+        
+        //TwoHandedSwords
+         () => new OrcArm(),
+         
+        //ChestPlate 
         () => new StandardChestplate(),
-        () => new OrcArm(),
+        
+        //Gloves 
+        () => new StandardGloves(),
+        
+        //Boots 
+        
+        //Helmet
+        
+        
+        
+        
+        
+        
+       
         
         // add new item classes here
     };
