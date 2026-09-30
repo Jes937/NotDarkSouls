@@ -2,47 +2,53 @@
 
 namespace NotDarkSouls.Classes.Map;
 
-public class Forrest
+public static class Forrest
 {
-    public static string Visit(BaseClass player)
+    public static async Task<string> Visit(BaseClass player)
     {
-        Console.WriteLine("Welcome you are now standing in the forrest of the forbiden");
+        Console.WriteLine();
+        Console.WriteLine(
+            "Welcome you are now standing in the forrest of the forbiden"
+        );
 
         while (true)
         {
-            Console.WriteLine("\nExplore the forrest [1], Go to the nearest city [2], Inventory [9], Menu[0]");
-            var choice = Console.ReadLine();
+            Console.WriteLine();
+            Console.WriteLine(
+                "Explore the forrest [1], " +
+                "Go to the nearest city [2], " +
+                "Inventory [9], " +
+                "Menu [0]"
+            );
+
+            string? choice = Console.ReadLine()?.Trim();
 
             if (choice == "1")
             {
+                Console.WriteLine();
+                Console.WriteLine("You explore the forrest.");
 
+                // Add exploration/combat here later.
             }
             else if (choice == "2")
             {
-                //skal lige rette det her så den ikke stacer loops 
-                StartingCity.Visit(player);
-
-            }
-            else if (choice == "3")
-            {
-
-            }
-            else if (choice == "4")
-            {
-
+                // LogicForVisit will open StartingCity.
+                return "StartingCity";
             }
             else if (choice == "9")
             {
-                InventoryMenu.ShowInventoryMenu(player);
+                // Wait until Inventory is completely finished.
+                await Inventory.ShowInventory(player);
             }
             else if (choice == "0")
             {
-                Console.WriteLine("Returning to menu...");
                 return "Menu";
             }
             else
             {
-                Console.WriteLine("pls make a valid choice");
+                Console.WriteLine(
+                    "Please make a valid choice."
+                );
             }
         }
     }

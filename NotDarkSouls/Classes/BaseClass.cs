@@ -1,91 +1,84 @@
-﻿using NotDarkSouls.Classes.Map;
+﻿namespace NotDarkSouls.Classes;
 
-namespace NotDarkSouls.Classes;
-
-public abstract class BaseClass
+public class BaseClass
 {
-    public int Lvl { get; set; }
-    public int Health { get; set; }
-    public int Strength { get; set; }
-    public int Mana { get; set; }
-    public int Dexterity { get; set; }
-    public int Experience { get; set; }
-    public int Currency { get; set; }
-    public InventoryLogic InventoryLogic { get; } = new();
+    
+    // PLAYER
+    
+    public int PlayerId { get; set; }
 
+
+    
+    // PLAYER STATS
+    
+    public int Lvl { get; set; }
+
+    public int Health { get; set; }
+
+    public int Strength { get; set; }
+
+    public int Mana { get; set; }
+
+    public int Dexterity { get; set; }
+
+    public int Experience { get; set; }
+
+
+    
+    // INVENTORY
+    
+
+    // Set in Program.cs right after the character is created or loaded
+    public InventoryLogic InventoryLogic { get; set; } = null!;
+
+
+    
+    // EXPERIENCE
     public void AddExperience(int amount)
     {
         Experience += amount;
-        Console.WriteLine($"Gained {amount} XP ({Experience}/{ExperienceToNextLevel()})");
+
+        Console.WriteLine(
+            $"Gained {amount} XP ({Experience}/{ExperienceToNextLevel()})"
+        );
 
         while (Experience >= ExperienceToNextLevel())
         {
             Experience -= ExperienceToNextLevel();
-            LevelUp();
+
+            Lvl++;
+
+            Console.WriteLine(
+                $"Level up! You are now level {Lvl}."
+            );
         }
     }
 
-    public virtual void ShowStats()
-    {
-        Console.WriteLine($"\nLevel: {Lvl}");
-        Console.WriteLine($"Health: {Health}");
-        Console.WriteLine($"Strength: {Strength}");
-        Console.WriteLine($"Mana: {Mana}");
-        Console.WriteLine($"Dexterity: {Dexterity}");
-        Console.WriteLine($"Experience: {Experience}/{ExperienceToNextLevel()}");
-    }
 
-  /*  public int AmountArmor(int amount)
-    {
-        
-    }
-*/
-    protected virtual int ExperienceToNextLevel()
+    
+    // EXPERIENCE NEEDED
+    
+    public int ExperienceToNextLevel()
     {
         return Lvl * 100;
     }
 
-    protected virtual void LevelUp()
+
+    // SHOW STATS
+    
+
+    public virtual void ShowStats()
     {
-        Lvl++;
-        int levelPoints = 3;
+        Console.WriteLine();
 
-        Console.WriteLine($"Level up! You are now level {Lvl}.");
+        Console.WriteLine($"Level: {Lvl}");
+        Console.WriteLine($"Health: {Health}");
+        Console.WriteLine($"Strength: {Strength}");
+        Console.WriteLine($"Mana: {Mana}");
+        Console.WriteLine($"Dexterity: {Dexterity}");
 
-        while (levelPoints > 0)
-        {
-            Console.WriteLine($"\nYou have {levelPoints} point(s) to spend.");
-            Console.WriteLine("Health [1]");
-            Console.WriteLine("Strength [2]");
-            Console.WriteLine("Mana [3]");
-            Console.WriteLine("Dexterity [4]");
-
-            switch (Console.ReadLine())
-            {
-                case "1":
-                    Health++;
-                    levelPoints--;
-                    Console.WriteLine("Health increased!");
-                    break;
-                case "2":
-                    Strength++;
-                    levelPoints--;
-                    Console.WriteLine("Strength increased!");
-                    break;
-                case "3":
-                    Mana++;
-                    levelPoints--;
-                    Console.WriteLine("Mana increased!");
-                    break;
-                case "4":
-                    Dexterity++;
-                    levelPoints--;
-                    Console.WriteLine("Dexterity increased!");
-                    break;
-                default:
-                    Console.WriteLine("Invalid choice.");
-                    break;
-            }
-        }
+        Console.WriteLine(
+            $"Experience: {Experience}/{ExperienceToNextLevel()}"
+        );
     }
 }

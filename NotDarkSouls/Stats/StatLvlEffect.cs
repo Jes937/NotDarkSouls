@@ -7,18 +7,21 @@ public class StatLevelEffect
     public int ManaBonus { get; set; }
     public int DexterityBonus { get; set; }
     public int CurrencyBonus { get; set; }
+
     public string Description { get; set; } = "";
 
-    public void ApplyTo(BaseClass character)
+    public async Task ApplyTo(BaseClass character)
     {
         character.Strength += StrengthBonus;
         character.Health += HealthBonus;
         character.Mana += ManaBonus;
         character.Dexterity += DexterityBonus;
-        character.Currency += CurrencyBonus;
+
+        if (CurrencyBonus != 0)
+        {
+            await character.InventoryLogic.AddCurrencyAsync(
+                CurrencyBonus
+            );
+        }
     }
-
-
-    
-    
 }

@@ -4,26 +4,39 @@ namespace NotDarkSouls.Classes.Map;
 
 public static class StartingCity
 {
-    public static string Visit(BaseClass player)
+    public static async Task<string> Visit(BaseClass player)
     {
-        Console.WriteLine("Welcome stranger");
+        Console.WriteLine();
+        Console.WriteLine("Welcome to the city.");
+
         while (true)
         {
-            Console.WriteLine("Go back [8], Inventory [9], Menu [0]");
-            var choice = Console.ReadLine();
+            Console.WriteLine();
+            Console.WriteLine(
+                "Go to the forrest [1], " +
+                "Inventory [9], " +
+                "Menu [0]"
+            );
 
-            if (choice == "8")
+            string? choice = Console.ReadLine()?.Trim();
+
+            if (choice == "1")
             {
-                Console.WriteLine("Returning to menu");
-                return "Menu";
+                return "Forrest";
             }
             else if (choice == "9")
             {
-                InventoryMenu.ShowInventoryMenu(player);
+                await Inventory.ShowInventory(player);
+            }
+            else if (choice == "0")
+            {
+                return "Menu";
             }
             else
             {
-                Console.WriteLine("pls make a valid choice");
+                Console.WriteLine(
+                    "Please make a valid choice."
+                );
             }
         }
     }

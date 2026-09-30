@@ -4,15 +4,20 @@ namespace NotDarkSouls.Classes.Map;
 
 public static class LogicForVisit
 {
-    public static void Run(BaseClass player)
+    public static async Task Run(BaseClass player)
     {
         string currentLocation = "Forrest";
+
         while (currentLocation != "Menu")
         {
             currentLocation = currentLocation switch
             {
-                "Forrest" => Forrest.Visit(player),
-                "StartingCity" => StartingCity.Visit(player),
+                "Forrest" =>
+                    await Forrest.Visit(player),
+
+                "StartingCity" =>
+                    await StartingCity.Visit(player),
+
                 _ => "Menu"
             };
         }
