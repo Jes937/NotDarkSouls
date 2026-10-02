@@ -13,8 +13,7 @@ public class InventoryDB
 
     [Column("Currency"), NotNull]
     public int Currency { get; set; }
-
-    // Not a linq2db association — filled manually in GetByPlayerIdAsync
+    
     [NotColumn]
     public List<InventoryItemDB> Items { get; set; } = new();
 }

@@ -1,4 +1,6 @@
-﻿namespace NotDarkSouls.Items;
+﻿using NotDarkSouls.Items.ItemsForPlayer.Boots;
+
+namespace NotDarkSouls.Items;
 
 // The database only stores an item's name, so this turns a saved name back into a real item object.
 // Every item in the game has to be listed here, and every item needs a unique Name.
@@ -21,6 +23,8 @@ public static class ItemCatalog
         () => new StandardGloves(),
         
         //Boots 
+        
+        () => new WilliamsBoots(),
         
         //Helmet
         

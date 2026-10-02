@@ -9,7 +9,6 @@
 
     <ItemGroup>
       <Folder Include="Enemies\" />
-      <Folder Include="Items\ItemsForPlayer\Boots\" />
       <Folder Include="Items\ItemsForPlayer\Helmet\" />
       <Folder Include="NPC\" />
       <Folder Include="Server\" />

@@ -8,7 +8,7 @@ public class StatsDB
     [PrimaryKey, Identity]
     public int StatsId { get; set; }
 
-    [Column("PlayerId"), NotNull]   // foreign key back to PlayerDB
+    [Column("PlayerId"), NotNull]   
     public int PlayerId { get; set; }
 
     [Column("Health"), NotNull]

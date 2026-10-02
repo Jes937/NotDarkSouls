@@ -16,6 +16,10 @@ public class PlayerDB
 
     [Column("Level"), NotNull]
     public int Level { get; set; }
+    
+    [Column("Location")]
+    [NotNull]
+    public string Location { get; set; } = "Forrest";
 
     // one-to-one: one player, one stats row
     [Association(ThisKey = nameof(PlayerId), OtherKey = nameof(StatsDB.PlayerId), CanBeNull = true)]

@@ -22,6 +22,8 @@ public class BaseClass
     public int Dexterity { get; set; }
 
     public int Experience { get; set; }
+    
+    public int Armor { get; set; }
 
 
     
@@ -53,8 +55,6 @@ public class BaseClass
             );
         }
     }
-
-
     
     // EXPERIENCE NEEDED
     
@@ -62,8 +62,7 @@ public class BaseClass
     {
         return Lvl * 100;
     }
-
-
+    
     // SHOW STATS
     
 
@@ -76,9 +75,19 @@ public class BaseClass
         Console.WriteLine($"Strength: {Strength}");
         Console.WriteLine($"Mana: {Mana}");
         Console.WriteLine($"Dexterity: {Dexterity}");
+        
+        int equippedArmor = InventoryLogic.GetTotalArmor();
+        Console.WriteLine($"Armor: {Armor + equippedArmor} ({equippedArmor} equipped)");
 
         Console.WriteLine(
             $"Experience: {Experience}/{ExperienceToNextLevel()}"
         );
     }
+    
+    
+// Saved in PlayerDB.Class, and used to find the class again on load
+    public virtual string ClassName => GetType().Name;
+
+// Each class overrides this to give its starting items
+    public virtual Task AddStartingItemsAsync() => Task.CompletedTask;
 }
