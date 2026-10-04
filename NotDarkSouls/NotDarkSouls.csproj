@@ -11,7 +11,7 @@
       <Folder Include="Enemies\" />
       <Folder Include="Items\ItemsForPlayer\Helmet\" />
       <Folder Include="Items\ItemsForPlayer\TwoHandedSwords\" />
-      <Folder Include="NPC\" />
+      <Folder Include="NPC\Enemies\" />
       <Folder Include="Server\" />
     </ItemGroup>
 

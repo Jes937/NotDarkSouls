@@ -1,4 +1,5 @@
 ﻿using NotDarkSouls.Classes;
+using NotDarkSouls.NPC.Friendly;
 
 namespace NotDarkSouls.Classes.Map;
 
@@ -14,6 +15,7 @@ public static class StartingCity
             Console.WriteLine();
             Console.WriteLine(
                 "Go to the forrest [1], " +
+                "Talk to the guy [2]," +
                 "Inventory [9], " +
                 "Menu [0]"
             );
@@ -23,6 +25,11 @@ public static class StartingCity
             if (choice == "1")
             {
                 return "Forrest";
+            }
+            else if (choice == "2")
+            {
+                var Bob = new Bob();
+                Bob.Talk();
             }
             else if (choice == "9")
             {
