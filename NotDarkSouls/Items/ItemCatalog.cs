@@ -14,7 +14,7 @@ public static class ItemCatalog
         () => new ElfDagger(),
         
         //TwoHandedSwords
-         () => new OrcArm(),
+         
          
         //ChestPlate 
         () => new StandardChestplate(),

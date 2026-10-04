@@ -10,6 +10,7 @@
     <ItemGroup>
       <Folder Include="Enemies\" />
       <Folder Include="Items\ItemsForPlayer\Helmet\" />
+      <Folder Include="Items\ItemsForPlayer\TwoHandedSwords\" />
       <Folder Include="NPC\" />
       <Folder Include="Server\" />
     </ItemGroup>

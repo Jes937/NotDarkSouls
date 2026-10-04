@@ -21,7 +21,6 @@ public class Warrior : BaseClass
     {
         await InventoryLogic.AddItemAsync(new WarriorStartingSword());
         await InventoryLogic.AddItemAsync(new ElfDagger());
-        await InventoryLogic.AddItemAsync(new OrcArm());
         await InventoryLogic.AddItemAsync(new StandardChestplate());
         await InventoryLogic.AddItemAsync(new WilliamsBoots());
     }
