@@ -23,4 +23,6 @@ public int Damage { get; set; }
 public int Armor { get; set; }
 public int Weight { get; set; }
 
+public int Price { get; set; }
+
 }

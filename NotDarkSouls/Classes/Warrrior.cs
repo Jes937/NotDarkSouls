@@ -24,4 +24,4 @@ public class Warrior : BaseClass
         await InventoryLogic.AddItemAsync(new StandardChestplate());
         await InventoryLogic.AddItemAsync(new WilliamsBoots());
     }
-}
+}   

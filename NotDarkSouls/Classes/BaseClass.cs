@@ -28,9 +28,6 @@ public class BaseClass
 
     
     // INVENTORY
-    
-
-    // Set in Program.cs right after the character is created or loaded
     public InventoryLogic InventoryLogic { get; set; } = null!;
 
 

@@ -4,6 +4,8 @@ using NotDarkSouls.Classes;
 using NotDarkSouls.Classes.Map;
 using NotDarkSouls.Classes.Map.Menu;
 using NotDarkSouls.DataBase;
+using NotDarkSouls.NPC;
+using NotDarkSouls.NPC.Friendly;
 using NotDarkSouls.Service;
 
 
@@ -35,6 +37,9 @@ BaseClass player = result.Action == StartAction.Continue
     : await CreateNewCharacterAsync();
 
 player.ShowStats();
+
+//Npcs 
+NpcRegistry.Register(await CreateNpcAsync<Bob>());
 
 // ---------- Game loop ----------
 player.ShowStats();
@@ -170,7 +175,7 @@ async Task SaveCharacterAsync(BaseClass p)
     });
 }
 
-// Save the current location
+
 
 async Task SaveLocationAsync(string location)
 {
@@ -181,4 +186,25 @@ async Task SaveLocationAsync(string location)
         row.Location = location;
         await playerService.UpdateAsync(player.PlayerId, row);
     }
+}   // <-- this must be closed first
+
+async Task<T> CreateNpcAsync<T>() where T : BaseFriendlyNPC, new()
+{
+    var npc = new T();
+
+    var loaded = await InventoryLogic.LoadAsync(playerService.Inventory, npc.InventoryOwnerId);
+
+    if (loaded != null)
+    {
+        npc.InventoryLogic = loaded;
+    }
+    else
+    {
+        npc.InventoryLogic = await InventoryLogic.CreateAsync(playerService.Inventory, npc.InventoryOwnerId);
+        await npc.StockShopAsync();
+    }
+
+    return npc;
 }
+    
+

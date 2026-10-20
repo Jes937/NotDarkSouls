@@ -13,5 +13,7 @@ public class WilliamsBoots : BaseItem
         Armor = 25;
 
         Weight = 20;
+
+        Price = 20;
     }
 }
